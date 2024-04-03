@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+         <!-- Lien CSS de Swiper -->
+         <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+        
+         <!-- Lien CDN de Font Awesome -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      
+         <!-- Lien du fichier CSS personnalisé -->
+      
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dash.css">
+    <!-- <link rel="stylesheet" href="../css/nav2.css"> -->
+
+    <title>Hébergement-Dash</title>    
+
+    <style>
+        .q {
+            font-size: 15px; /* Changé de 10px à 20px pour une meilleure lisibilité */
+            color: #666;
+        }
+        .title {
+                 margin-bottom: 5px;
+                 font-size: 20px;
+                 color: #666;
+                 text-align: center
+                }
+
+             .paragraphe-analyse {
+    background-color: #f4f4f4;
+    border-left: 4px solid #8e44ad;
+    padding: 20px;
+    margin-top: 20px; /* Espace au-dessus de l'analyse pour la séparer du graphique */
+    font-size: 12px;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+        
+    </style>
+
+</head>
+
+
+        <body>
+           
+        <!-- Section en-tête commence ici -->
+        
+        <section class="header">
+        
+            <a href="../home.php" class="logo">FèsCity</a>
+
+           <nav class="navbar">
+             <a href="tourism.html">Tourisme</a>
+             <a href="hebergement.html">Hèbergement</a>
+             <a href="restauration.html">Rèstauration</a>
+             <a href="transport.html">Transport</a>  
+           </nav>
+           
+        
+           <div id="menu-btn" class="fas fa-bars"></div>
+        
+        </section>       
+
+ 
+        <br>
+        <br>
+        <br>
+
+
+        <div class="main">
+            <div>
+                <br>
+                <br>
+                <br>
+
+
+            <div class="charts-container">
+               
+                <div class="chart">
+                    <h2 class="title">Évolution du nombre d'établissements et de la capacité d'accueil (lits) de 2010 à 2022</h2>
+                    <canvas id="chart1"></canvas>
+                    <br>             
+                    <br>
+                    <div class="paragraphe-analyse">
+                        <p>L'analyse des KPI du secteur montre une croissance continue du nombre d'établissements et de la capacité d'accueil de 2010 à 2019, suivie d'une légère régression en 2020, puis d'une stabilisation. Cette évolution suggère une expansion robuste suivie d'un ajustement aux défis, possiblement externes, en 2020. La capacité d'adaptation et la résilience du secteur se manifestent par la reprise de la croissance en 2022, indiquant une préparation à répondre aux besoins futurs et une base solide pour la croissance continue.                                                 </p>
+                    </div>
+                </div>
+                
+                <div class="chart doughnut-chart">
+                    <h2 class="title">Analyse de taux d'occupation annuel & saisonnier</h2>
+                    <canvas id="chart2"></canvas>
+                    <br>             
+                    <br>
+                    <br>             
+                    <br>
+                    <div class="paragraphe-analyse">
+                        <p>Entre 2010 et 2022, le nombre d'établissements a augmenté de 300 à 384, et la capacité d'accueil de 15,000 à 19,500 lits, révélant une croissance soutenue du secteur. Cependant, le taux d'occupation a connu une chute marquée de 78% à 40% en 2020, avant de se redresser partiellement à 60% en 2022. Cette fluctuation suggère un impact significatif de la pandémie sur le secteur, mais aussi une capacité de récupération. La baisse du taux d'occupation en 2020 souligne la vulnérabilité aux chocs externes, tandis que la reprise témoigne de l'adaptabilité et de la résilience du secteur.</p>
+                    </div>
+                </div>
+            </div>  
+            <div class="charts-container">
+                <div class="chart">
+                    <h2 class="title"> Évolution des prix moyens par catégorie d'hébergement à Fès de 2000 à 2022</h2>
+                    <canvas id="chart3"></canvas>
+                    <br>             
+                    <br>
+                    <br>     
+                    <div class="paragraphe-analyse">
+                        <p>L'évolution des prix d'hébergement à Fès entre 2000 et 2022 révèle une tendance à la hausse constante. Les tarifs pour les hébergements à bas prix, moyens et élevés ont tous augmenté de manière significative au fil des ans, avec des taux de croissance variant entre 146% et 137,5%. Cette progression démontre une réponse proactive aux besoins changeants des voyageurs et à la demande touristique croissante dans la région. Globalement, cette tendance ascendante reflète l'engagement continu du secteur hôtelier de Fès à maintenir des standards de qualité élevés et à s'adapter aux exigences du marché, renforçant ainsi sa position en tant que destination touristique de premier plan.</p>
+                    </div>
+                </div>
+                
+                <div class="chart doughnut-chart">
+                    <h2 class="title">Analyse de taux d'occupation annuel & saisonnier</h2>
+                    <canvas id="chart4"></canvas>
+                    <br>             
+                    <br>
+                    <br>             
+                    <br>
+                    <br>             
+                    <br>
+                    <div class="paragraphe-analyse">
+                        <p>Entre 2010 et 2022, le nombre d'établissements a augmenté de 300 à 384, et la capacité d'accueil de 15,000 à 19,500 lits, révélant une croissance soutenue du secteur. Cependant, le taux d'occupation a connu une chute marquée de 78% à 40% en 2020, avant de se redresser partiellement à 60% en 2022. Cette fluctuation suggère un impact significatif de la pandémie sur le secteur, mais aussi une capacité de récupération. La baisse du taux d'occupation en 2020 souligne la vulnérabilité aux chocs externes, tandis que la reprise témoigne de l'adaptabilité et de la résilience du secteur.</p>
+                    </div>
+                </div>
+            </div>  
+            
+            
+<!-- Section pied de page commence ici -->
+
+<section class="footer">
+
+    <div class="box-container">
+ 
+       <div class="box">
+          <h3>Liens rapides</h3>
+          <a href="../home.php"> <i class="fas fa-angle-right"></i> Accueil</a>
+          <a href="../about.php"> <i class="fas fa-angle-right"></i> À propos</a>
+          <a href="../hebergement.php"> <i class="fas fa-angle-right"></i> Hèbergement</a>
+          <a href="../restauration.php"> <i class="fas fa-angle-right"></i> Rèstauration</a>
+          <a href="../transport.php"> <i class="fas fa-angle-right"></i> Transport</a>
+          <a href="../book.php"> <i class="fas fa-angle-right"></i> Réservation</a>
+       </div>
+ 
+ 
+       <div class="box">
+          <h3>Coordonnées</h3>
+          <a href="#"> <i class="fas fa-phone"></i> +212 06 30 38 81 37 </a>
+          <a href="#"> <i class="fas fa-envelope"></i> youssef.berrissoul@usmba.ac.ma </a>
+          <a href="#"> <i class="fas fa-envelope"></i> berrissoul999@gmail.com </a>
+          <a href="#"> <i class="fas fa-map"></i>Maroc , Fès, 30000  </a>
+          
+         
+       </div>
+ 
+       <div class="box">
+          <h3>Suivez-nous</h3>
+          <a href="https://www.facebook.com/profile.php?id=100044649818171&mibextid=2JQ9oc"> <i class="fab fa-facebook-f"></i> Facebook </a>
+          <a href="#"> <i class="fab fa-twitter"></i> Twitter </a>
+          <a href="https://www.instagram.com/you_ssef_03?utm_source=qr&igshid=enh3ejY0OWNya2t4"> <i class="fab fa-instagram"></i> Instagram </a>
+          <a href="#"> <i class="fab fa-linkedin"></i> LinkedIn </a>
+       </div>
+ 
+    </div>
+ 
+    <div class="credit"> Créé par <span>Mr. Youssef_MoMo</span> | Tous droits réservés ! </div>
+ 
+ </section>
+        </div>
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="../api/chart1.js" defer></script>
+  
+</body>
+
+
+<!-- Lien JS de Swiper -->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+
+<!-- Lien du fichier JS personnalisé -->
+<script src="../js/script.js"  defer></script>
+</html>

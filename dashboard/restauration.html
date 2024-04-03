@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+         <!-- Lien CSS de Swiper -->
+         <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+        
+         <!-- Lien CDN de Font Awesome -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      
+         <!-- Lien du fichier CSS personnalisé -->
+      
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dash.css">
+    <!-- <link rel="stylesheet" href="../css/nav2.css"> -->
+
+    <title>Restauration-Dash</title>    
+
+    <style>
+        .q {
+            font-size: 15px; /* Changé de 10px à 20px pour une meilleure lisibilité */
+            color: #666;
+        }
+        .title {
+                 margin-bottom: 5px;
+                 font-size: 20px;
+                 color: #666;
+                 text-align: center
+                }
+
+                .paragraphe-analyse {
+    background-color: #f4f4f4;
+    border-left: 4px solid #8e44ad;
+    padding: 20px;
+    margin-top: 20px; /* Espace au-dessus de l'analyse pour la séparer du graphique */
+    font-size: 12px;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+    
+    </style>
+
+</head>
+
+
+        <body>
+           
+        <!-- Section en-tête commence ici -->
+        
+        <section class="header">
+        
+            <a href="../home.php" class="logo">FèsCity</a>
+
+           <nav class="navbar">
+             <a href="tourism.html">Tourisme</a>
+             <a href="hebergement.html">Hèbergement</a>
+             <a href="restauration.html">Rèstauration</a>
+             <a href="transport.html">Transport</a>  
+           </nav>
+           <div id="menu-btn" class="fas fa-bars"></div>
+        
+        </section>       
+
+ 
+        <br>
+        <br>
+        <br>
+
+
+        <div class="main">
+            <div>
+                <br>
+                <br>
+                <br>
+
+            </div>
+            <div class="charts-container">
+                <div class="chart">
+                    <h2 class="title">Évolution des Nouveaux Établissements et des Investissements en Restauration (2010-2023)</h2>
+                    <canvas id="chart5"></canvas>
+                    <br>             
+                    <br>
+                    <div class="paragraphe-analyse">
+                        <p>Entre 2010 et 2023, le secteur de la restauration a montré une croissance soutenue, caractérisée par une augmentation constante du nombre de nouveaux restaurants et cafés, ainsi que des investissements progressifs. Cette expansion reflète la vitalité du marché de la restauration et la confiance des investisseurs dans son potentiel de croissance à long terme. Malgré les fluctuations temporaires, telles que la baisse des investissements en 2020 due à la pandémie de COVID-19, le secteur a rapidement rebondi, démontrant sa résilience face aux défis. Ces tendances soulignent l'attrait continu du secteur de la restauration pour les entrepreneurs et les investisseurs, ainsi que sa capacité à s'adapter et à prospérer dans un environnement en constante évolution.</p>
+                    </div>
+                </div>
+                
+                <div class="chart doughnut-chart">
+                    <h2 class="title">Evolution de la Popularité de la Cuisine Marocaine par Rapport à la Cuisine International</h2>
+                    <canvas id="chart6"></canvas>
+                    <br>             
+                    <br>
+                    <div class="paragraphe-analyse">
+                        <p>Le diagramme illustre l'évolution de la popularité relative de la cuisine marocaine par rapport à la cuisine internationale de 2010 à 2023, révélant une tendance à la diversification des préférences culinaires. Initialement, la cuisine marocaine domine nettement, représentant environ 70% de la préférence jusqu'en 2015. Toutefois, les années suivantes montrent une montée graduelle de l'intérêt pour la cuisine internationale, culminant presque à une égalité avec la cuisine marocaine en 2023. Cette transition suggère un enrichissement du paysage gastronomique, possiblement influencé par la globalisation, l'accroissement des voyages internationaux et une curiosité accrue pour les cultures culinaires diverses, tout en soulignant la capacité de la cuisine marocaine à maintenir une position forte et appréciée au sein de ce paysage en évolution.</p>
+                    </div>
+                </div>
+            </div>  
+            <div class="charts-container">
+                <div class="chart">
+                    <h2 class="title">Evolution du nombre d'employés et du taux de croissance de l'emploi</h2>
+                    <canvas id="chart7"></canvas>
+                    <br>             
+                    <br>
+                    <div class="paragraphe-analyse">
+                        <p>Le diagramme montre une croissance constante du nombre d'emplois et du nombre total d'employés entre 2010 et 2023. Cette croissance est inégale, avec des variations notables d'une année à l'autre. On observe une augmentation plus importante entre 2021 et 2023. Le taux de croissance de l'emploi est variable, mais il semble se stabiliser autour de 8% après 2020. La tendance générale est positive, indiquant un marché de l'emploi dynamique avec une création continue d'emplois.</p>
+                    </div>
+                </div>
+                
+                
+                <div class="chart doughnut-chart">
+                    <h2 class="title">Analyse de taux d'occupation annuel & saisonnier</h2>
+                    <canvas id="chart8"></canvas>
+                    <br>             
+                    <br>
+                    <br>             
+                    <br>
+                
+        
+                    <div class="paragraphe-analyse">
+                        <p>Le secteur de la restauration à Fès a connu une croissance importante entre 2010 et 2023. Cette croissance se manifeste par l'augmentation du nombre d'établissements, des investissements, des employés et du taux de croissance de l'emploi. La popularité de la cuisine marocaine reste stable et constitue un atout important pour le secteur. Le diagramme montre un secteur dynamique et en pleine expansion, ce qui est prometteur pour l'économie locale et pour l'emploi.
+                        </p>
+                </div>
+            </div>  
+        </div>
+            
+
+
+
+
+
+
+
+
+
+            
+<!-- Section pied de page commence ici -->
+
+<section class="footer">
+
+    <div class="box-container">
+ 
+       <div class="box">
+          <h3>Liens rapides</h3>
+          <a href="home.php"> <i class="fas fa-angle-right"></i> Accueil</a>
+          <a href="about.php"> <i class="fas fa-angle-right"></i> À propos</a>
+          <a href="hebergement.php"> <i class="fas fa-angle-right"></i> Hèbergement</a>
+          <a href="restauration.php"> <i class="fas fa-angle-right"></i> Rèstauration</a>
+          <a href="transport.php"> <i class="fas fa-angle-right"></i> Transport</a>
+          <a href="book.php"> <i class="fas fa-angle-right"></i> Réservation</a>
+       </div>
+ 
+ 
+       <div class="box">
+          <h3>Coordonnées</h3>
+          <a href="#"> <i class="fas fa-phone"></i> +212 06 30 38 81 37 </a>
+          <a href="#"> <i class="fas fa-envelope"></i> youssef.berrissoul@usmba.ac.ma </a>
+          <a href="#"> <i class="fas fa-envelope"></i> berrissoul999@gmail.com </a>
+          <a href="#"> <i class="fas fa-map"></i>Maroc , Fès, 30000  </a>
+          
+         
+       </div>
+ 
+       <div class="box">
+          <h3>Suivez-nous</h3>
+          <a href="https://www.facebook.com/profile.php?id=100044649818171&mibextid=2JQ9oc"> <i class="fab fa-facebook-f"></i> Facebook </a>
+          <a href="#"> <i class="fab fa-twitter"></i> Twitter </a>
+          <a href="https://www.instagram.com/you_ssef_03?utm_source=qr&igshid=enh3ejY0OWNya2t4"> <i class="fab fa-instagram"></i> Instagram </a>
+          <a href="#"> <i class="fab fa-linkedin"></i> LinkedIn </a>
+       </div>
+ 
+    </div>
+ 
+    <div class="credit"> Créé par <span>Mr. Youssef_MoMo</span> | Tous droits réservés ! </div>
+ 
+ </section>
+        </div>
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="../api/chart2.js" defer></script>
+  
+</body>
+
+
+<!-- Lien JS de Swiper -->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+<!-- Lien du fichier JS personnalisé -->
+<script src="../js/script.js"  defer></script>
+</html>

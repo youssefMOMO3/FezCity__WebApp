@@ -1,0 +1,216 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema project
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema project
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `project` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+USE `project` ;
+
+-- -----------------------------------------------------
+-- Table `project`.`chart1`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `project`.`chart1` (
+  `Annee` INT NULL DEFAULT NULL,
+  `NombreEtablissements` INT NULL DEFAULT NULL,
+  `NombreLits` INT NULL DEFAULT NULL)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `project`.`chart10`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `project`.`chart10` (
+  `Année` INT NULL DEFAULT NULL,
+  `Investissements_routes_millions_MAD` INT NULL DEFAULT NULL,
+  `Investissements_transports_en_commun_millions_MAD` INT NULL DEFAULT NULL,
+  `Investissements_autres_infrastructures_millions_MAD` INT NULL DEFAULT NULL)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `project`.`chart11`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `project`.`chart11` (
+  `Type_transport` VARCHAR(50) NULL DEFAULT NULL,
+  `Pourcentage_utilisation` DECIMAL(5,2) NULL DEFAULT NULL)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `project`.`chart12`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `project`.`chart12` (
+  `Année` INT NULL DEFAULT NULL,
+  `Nombre_total_de_voyageurs_millions` DECIMAL(5,2) NULL DEFAULT NULL,
+  `Nombre_total_de_trains_par_jour` INT NULL DEFAULT NULL,
+  `Nombre_total_de_quais` INT NULL DEFAULT NULL,
+  `Superficie_totale_des_gares_m²` INT NULL DEFAULT NULL,
+  `Taux_de_satisfaction_moyen_des_clients` DECIMAL(5,2) NULL DEFAULT NULL)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `project`.`chart2`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `project`.`chart2` (
+  `Annee` INT NULL DEFAULT NULL,
+  `NombreEtablissements` INT NULL DEFAULT NULL,
+  `CapaciteAccueil` INT NULL DEFAULT NULL,
+  `TauxOccupation` INT NULL DEFAULT NULL)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `project`.`chart3`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `project`.`chart3` (
+  `Annee` INT NOT NULL,
+  `BudgetBas` DECIMAL(6,2) NULL DEFAULT NULL,
+  `BudgetMoyen` DECIMAL(6,2) NULL DEFAULT NULL,
+  `BudgetEleve` DECIMAL(6,2) NULL DEFAULT NULL,
+  PRIMARY KEY (`Annee`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `project`.`chart4`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `project`.`chart4` (
+  `TypeHebergement` VARCHAR(50) NULL DEFAULT NULL,
+  `Printemps` INT NULL DEFAULT NULL,
+  `Ete` INT NULL DEFAULT NULL,
+  `Automne` INT NULL DEFAULT NULL,
+  `Hiver` INT NULL DEFAULT NULL,
+  `Remarques` VARCHAR(100) NULL DEFAULT NULL)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `project`.`chart5`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `project`.`chart5` (
+  `Annee` INT NULL DEFAULT NULL,
+  `Nouveaux_restaurants` INT NULL DEFAULT NULL,
+  `Nouveaux_cafes` INT NULL DEFAULT NULL,
+  `Investissements` DECIMAL(10,2) NULL DEFAULT NULL)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `project`.`chart6`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `project`.`chart6` (
+  `Annee` INT NULL DEFAULT NULL,
+  `Cuisine_Marocaine` INT NULL DEFAULT NULL,
+  `Cuisine_Internationale` INT NULL DEFAULT NULL)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `project`.`chart7`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `project`.`chart7` (
+  `Annee` INT NULL DEFAULT NULL,
+  `Nouveaux_Emplois` INT NULL DEFAULT NULL,
+  `Nombre_Total_Employes` INT NULL DEFAULT NULL,
+  `Taux_Croissance_Emploi` VARCHAR(10) NULL DEFAULT NULL)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `project`.`chart8`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `project`.`chart8` (
+  `Annee` INT NULL DEFAULT NULL,
+  `Nouveaux_Etablissements` INT NULL DEFAULT NULL,
+  `Investissements_Millions_Dirhams` DECIMAL(10,2) NULL DEFAULT NULL,
+  `Popularite_Cuisine_Marocaine` DECIMAL(5,2) NULL DEFAULT NULL,
+  `Nombre_Employes` INT NULL DEFAULT NULL,
+  `Taux_Croissance_Emploi` DECIMAL(5,2) NULL DEFAULT NULL)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `project`.`chart9`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `project`.`chart9` (
+  `Année` INT NULL DEFAULT NULL,
+  `Taxis_existants` INT NULL DEFAULT NULL,
+  `Nombre_total_de_taxis_à_Fès` INT NULL DEFAULT NULL,
+  `Taux_de_croissance_annuel` DECIMAL(5,2) NULL DEFAULT NULL)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `project`.`commentaires`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `project`.`commentaires` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nom` VARCHAR(255) NULL DEFAULT NULL,
+  `email` VARCHAR(255) NULL DEFAULT NULL,
+  `message` VARCHAR(255) NULL DEFAULT NULL,
+  `date_creation` TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 11
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `project`.`reservations`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `project`.`reservations` (
+  `ID` INT NOT NULL AUTO_INCREMENT,
+  `Nom` VARCHAR(255) NULL DEFAULT NULL,
+  `Email` VARCHAR(255) NULL DEFAULT NULL,
+  `Telephone` INT NULL DEFAULT NULL,
+  `Adresse` VARCHAR(255) NULL DEFAULT NULL,
+  `Destination` VARCHAR(255) NULL DEFAULT NULL,
+  `NombreDePersonnes` INT NULL DEFAULT NULL,
+  `DateArrivee` DATE NULL DEFAULT NULL,
+  `DateDepart` DATE NULL DEFAULT NULL,
+  PRIMARY KEY (`ID`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
