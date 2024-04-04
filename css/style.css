@@ -132,14 +132,17 @@ section{
  
 /* Style les liens de l'en-tête */
 .header a {
-   color: black;
    text-align: center;
    padding: 12px;
    text-decoration: none;
-   font-size: 19px;
+   font-size: 17px;
+   font-weight: 700;
+   color: #fff;
+   letter-spacing: .02em;
+   font-family: "Ubuntu", Helvetica, Arial, sans-serif;
    line-height: 25px;
    border-radius: 4px;
-   color:var(--black);
+   color:rgb(67, 67, 67);
 
 }
 
@@ -149,14 +152,17 @@ section{
    font-size: 25px;
    font-weight: 2.5rem;
    margin-right: auto; /* Déplace le logo tout à gauche */
-   color:var(--black);
-
+   color:rgb(67, 67, 67);
 }
 
 
 .header .navbar a:hover{
    color:var(--main-color);
 }
+.header a.logo:hover {
+   color: var(--main-color);
+}
+
 
 #menu-btn{
    font-size: 2.5rem;
