@@ -41,15 +41,27 @@ button.arrow:hover {
 
 <a href="home.php" class="logo">FèsCity</a>
    <nav class="navbar">
-     <a href="home.php">Accueil</a>
-     <a href="about.php">À-Propos</a>
-     <a href="hebergement.php">Hèbergement</a>
-     <a href="restauration.php">Rèstauration</a>
-     <a href="transport.php">Transport</a>
-     <a href="dashboard/tourism.html">Dashbord</a>
-     <a href="book.php">Réservation</a>
-     <!-- <a href="book.php">Réservation</a>
-     <a href="book.php">Réservation</a> -->
+     <a href="home.php">
+     <i class="fas fa-home"></i>
+      Accueil</a>
+     <a href="about.php">
+     <i class="fas fa-info-circle"></i>
+      À-Propos</a>
+     <a href="hebergement.php">
+                <i class="fas fa-bed"></i>
+                Hèbergement</a>
+             <a href="restauration.php">
+                <i class="fas fa-utensils"></i>
+                Rèstauration</a>
+
+             <a href="transport.php">
+                <i class="fas fa-car"></i>
+                Transport</a> 
+                
+         <a href="dashboard/tourism.html">
+       <i class="fas fa-tachometer-alt"></i>Dashbord</a>
+     <!-- <a href="book.php">Réservation</a> -->
+
      
      
    </nav>
