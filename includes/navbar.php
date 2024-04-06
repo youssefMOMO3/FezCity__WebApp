@@ -49,7 +49,8 @@ button.arrow:hover {
       À-Propos</a>
      <a href="hebergement.php">
                 <i class="fas fa-bed"></i>
-                Hèbergement</a>
+                Hébergement</a>
+            
              <a href="restauration.php">
                 <i class="fas fa-utensils"></i>
                 Rèstauration</a>
@@ -57,9 +58,10 @@ button.arrow:hover {
              <a href="transport.php">
                 <i class="fas fa-car"></i>
                 Transport</a> 
-                
+
          <a href="dashboard/tourism.html">
-       <i class="fas fa-tachometer-alt"></i>Dashbord</a>
+       <i class="fas fa-tachometer-alt"> </i> 
+       Dashbord</a>
      <!-- <a href="book.php">Réservation</a> -->
 
      
