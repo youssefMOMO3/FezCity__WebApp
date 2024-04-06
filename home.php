@@ -190,11 +190,7 @@ button.arrow:hover {
          <img src="images/icon-5.png" alt="">
          <h3>Tout-terrain</h3>
       </div>
-<!-- 
-      <div class="box">
-         <img src="images/icon-6.png" alt="">
-         <h3>Camping</h3>
-      </div> -->
+
 
    </div>
 
@@ -204,21 +200,6 @@ button.arrow:hover {
 
 
 
-
-
-
-
-<!-- Section Offre d'accueil commence ici -->
-
-<section class="home-offer">
-   <div class="content">
-      <h3>Jusqu'à 50% de réduction</h3>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure tempora assumenda, debitis aliquid nesciunt maiores quas! Magni cumque quaerat saepe!</p>
-      <a href="book.php" class="btn">Réservez maintenant</a>
-   </div>
-</section>
-
-<!-- Section Offre d'accueil se termine ici -->
 
 
 <br>

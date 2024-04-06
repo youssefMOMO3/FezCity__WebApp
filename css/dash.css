@@ -41,9 +41,18 @@
     color: #8e44ad;
 }
 
+.number:hover{
+    color:#888;
+ }
+ .card-name:hover{
+    color:#8e44ad;
+ }
+
+
 .card-name {
     color: #888;
     font-weight: 600;
+    font-size: 17px;
 }
 
 .icon-box i {
@@ -66,7 +75,7 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-    margin-bottom: 20px; /* Espace supplémentaire sous chaque graphique */
+    margin-bottom: 10px; /* Espace supplémentaire sous chaque graphique */
 }
 
 .chart canvas {

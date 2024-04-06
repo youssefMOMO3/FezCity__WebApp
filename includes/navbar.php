@@ -59,8 +59,8 @@ button.arrow:hover {
                 <i class="fas fa-car"></i>
                 Transport</a> 
 
-         <a href="dashboard/tourism.html">
-       <i class="fas fa-tachometer-alt"> </i> 
+         <a href="dashboard/analyse.html">
+       <i class="fas fa-chart-line"> </i> 
        Dashbord</a>
      <!-- <a href="book.php">Réservation</a> -->
 

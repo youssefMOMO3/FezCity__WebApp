@@ -70,7 +70,9 @@
       font-size: 40px; /* ajustez la taille du texte selon vos préférences */
       color: white; /* ajustez la couleur du texte selon vos préférences */
       z-index: 1; /* assurez-vous que le texte est au-dessus de la vidéo */
+      /*     */
    }
+   
 </style>
  
 </video>

@@ -202,7 +202,85 @@ server.get('/chart16-data', async (req, res) => {
 
 
 // transport  end 
+
+
+
+
+
+
+// analyse start
+
+
+server.get('/EtudeDecetionnel-data', async (req, res) => {
+    try {
+        const rows = await executeQuery('SELECT Age, COUNT(*) as count FROM EtudeDecetionnel GROUP BY Age');
+        res.json(rows);
+    } catch (err) {
+        res.status(500).send({ message: err.message });
+    }
+});
+
+
+server.get('/EtudeDecetionnel2-data', async (req, res) => {
+    try {
+        const rows = await executeQuery('SELECT Sexe, COUNT(*) as count FROM EtudeDecetionnel GROUP BY Sexe');
+        res.json(rows);
+    } catch (err) {
+        res.status(500).send({ message: err.message });
+    }
+});
+
+server.get('/SituationFamiliale-data', async (req, res) => {
+    try {
+        const rows = await executeQuery('SELECT EtatCivil, COUNT(*) as count FROM EtudeDecetionnel GROUP BY EtatCivil');
+        res.json(rows);
+    } catch (err) {
+        res.status(500).send({ message: err.message });
+    }
+});
+
+
+server.get('/Nationalite-data', async (req, res) => {
+    try {
+        const rows = await executeQuery('SELECT Nationalite, COUNT(*) as count FROM EtudeDecetionnel GROUP BY Nationalite');
+        res.json(rows);
+    } catch (err) {
+        res.status(500).send({ message: err.message });
+    }
+});
+
+server.get('/PeriodeVisite-data', async (req, res) => {
+    try {
+        const rows = await executeQuery('SELECT PeriodeDeVisite, COUNT(*) as count FROM EtudeDecetionnel GROUP BY PeriodeDeVisite');
+        res.json(rows);
+    } catch (err) {
+        res.status(500).send({ message: err.message });
+    }
+});
+
+
+server.get('/Devises-data', async (req, res) => {
+    try {
+        const rows = await executeQuery('SELECT Devises, COUNT(*) as count FROM EtudeDecetionnel GROUP BY Devises');
+        res.json(rows);
+    } catch (err) {
+        res.status(500).send({ message: err.message });
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
 // end 
+
+
 
 
 

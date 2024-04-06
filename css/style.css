@@ -116,7 +116,7 @@ section{
 
 /* Style l'en-tête avec un arrière-plan gris et un peu de marge */
 .header {
-   /* overflow: hidden; */
+   overflow: hidden;
    position: sticky;
    top:0; left:0; right:0;
    padding: 20px 20px;
@@ -130,6 +130,8 @@ section{
    
 }
  
+
+
 /* Style les liens de l'en-tête */
 .header a {
    text-align: center;
