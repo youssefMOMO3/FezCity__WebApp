@@ -39,7 +39,7 @@ button.arrow:hover {
 
 <section class="header">
 
-<a href="home.php" class="logo">FèsCity</a>
+<a href="home.php" class="logo">FezCity</a>
    <nav class="navbar">
      <a href="home.php">
      <i class="fas fa-home"></i>

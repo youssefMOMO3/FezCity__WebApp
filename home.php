@@ -208,12 +208,9 @@ button.arrow:hover {
 
 
 <?php
-   include('includes/contact.php');
+   // include('includes/contact.php');
 ?> 
 <!-- Inclusion de la section contact -->
-
-<br>
-<br>
 
 
 <?php

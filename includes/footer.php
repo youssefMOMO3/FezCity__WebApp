@@ -12,7 +12,7 @@
          <a href="hebergement.php"> <i class="fas fa-angle-right"></i> Hèbergement</a>
          <a href="restauration.php"> <i class="fas fa-angle-right"></i> Rèstauration</a>
          <a href="transport.php"> <i class="fas fa-angle-right"></i> Transport</a>
-         <a href="book.php"> <i class="fas fa-angle-right"></i> Réservation</a>
+         <a href="dashboard/analyse.html"> <i class="fas fa-angle-right"></i>Dashbord</a>
       </div>
 
 
