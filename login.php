@@ -4,6 +4,29 @@
     <meta charset="utf-8"/>
     <title>Login</title>
     <link rel="stylesheet" href="css/connection.css"/>
+    <style>
+      
+      .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center; /* Pour centrer le texte horizontalement */
+    display: block; /* Pour que le message soit affiché comme un bloc */
+    margin: 0 auto; /* Pour centrer le bloc dans son conteneur parent */
+        }
+        /* Animation de vibration pour les champs de formulaire invalides */
+        input:invalid {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
 </head>
 <body>
 
@@ -64,7 +87,6 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
 }
 ?>
 
-
 <div class="cont">
     <div class="form sign-in">
         <h2>Welcome</h2>
@@ -78,7 +100,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
                 <input type="password" name="password" />
             </label>
             <?php if (isset($login_error)) { ?>
-            <div class='error'><?php echo $login_error; ?></div>
+                <div class='error'><?php echo $login_error; ?></div>
             <?php } ?>
             <p class="forgot-pass">Forgot password?</p>
             <button type="submit" class="submit">Sign In</button>
@@ -113,7 +135,7 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
                     <input type="password" name="password" required />
                 </label>
                 <?php if (isset($signup_error)) { ?>
-                <div class='error'><?php echo $signup_error; ?></div>
+                    <div class='error'><?php echo $signup_error; ?></div>
                 <?php } ?>
                 <button type="submit" class="submit">Sign Up</button>
             </form>
