@@ -1,3 +1,38 @@
+<?php
+// Vérification du formulaire lors de la soumission
+if(isset($_POST['send'])) {
+    // Vérification des champs requis
+    $required_fields = ['name', 'email', 'phone', 'address', 'location', 'guests', 'arrivals', 'leaving'];
+    $errors = [];
+    
+    foreach($required_fields as $field) {
+        if(empty($_POST[$field])) {
+            $errors[] = "Le champ $field est requis.";
+        }
+    }
+    
+    // Vérification du format d'email
+    if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Adresse email invalide.";
+    }
+    
+    // Vérification du format de téléphone (10 chiffres)
+    if(!preg_match("/^[0-9]{10}$/", $_POST['phone'])) {
+        $errors[] = "Numéro de téléphone invalide (format: 10 chiffres).";
+    }
+    
+    // Si aucune erreur, traiter les données
+    if(empty($errors)) {
+        // Traitement des données (insérer dans la base de données, envoyer un email, etc.)
+        // Insérer le code pour traiter les données ici
+        
+        // Redirection après soumission réussie
+        header("Location: ./middlewares/confirmation.php");
+        exit();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -58,6 +93,25 @@
       color: white; /* ajustez la couleur du texte selon vos préférences */
       z-index: 1; /* assurez-vous que le texte est au-dessus de la vidéo */
    }
+
+   .errors {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.errors ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.errors li {
+    margin-bottom: 5px;
+}
+
 </style>
  
 </video>
@@ -65,12 +119,12 @@
 </div>
 
 <!-- section réservation commence -->
-
 <section class="booking">
 
    <h1 class="heading-title">Réservez votre voyage !</h1>
 
-   <form action="book_form.php" method="post" class="book-form">
+   <!-- Formulaire de réservation -->
+   <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="book-form">
 
       <div class="flex">
          <div class="inputBox">
@@ -83,7 +137,7 @@
          </div>
          <div class="inputBox">
             <span>Téléphone :</span>
-            <input type="number" placeholder="Entrez votre numéro" name="phone">
+            <input type="tel" placeholder="Entrez votre numéro" name="phone">
          </div>
          <div class="inputBox">
             <span>Adresse :</span>
@@ -110,6 +164,17 @@
       <input type="submit" value="Soumettre" class="btn" name="send">
 
    </form>
+
+   <!-- Affichage des erreurs -->
+   <?php if(!empty($errors)): ?>
+       <div class="errors">
+           <ul>
+               <?php foreach($errors as $error): ?>
+                   <li><?php echo $error; ?></li>
+               <?php endforeach; ?>
+           </ul>
+       </div>
+   <?php endif; ?>
 
 </section>
 
