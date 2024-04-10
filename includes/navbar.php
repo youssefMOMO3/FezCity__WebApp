@@ -41,44 +41,41 @@ button.arrow:hover {
 
 </head>
 <body>
+
+
+<?php
+session_start();
+require('./middlewares/db.php'); // Inclure le fichier de connexion à la base de données
+
+// Vérifier si l'utilisateur est connecté
+if (isset($_SESSION['email'])) {
+    $button_text = "Déconnexion";
+    $button_url = "./login.php"; // Lien vers la page de déconnexion
+} else {
+    $button_text = "Connexion";
+    $button_url = "./login.php"; // Lien vers la page de connexion
+}
+?>
    
 <!-- Section en-tête commence ici -->
-
 <section class="header">
+    <a href="home.php" class="logo">FezCity</a>
+    <nav class="navbar">
+        <a href="home.php"><i class="fas fa-home"></i> Accueil</a>
+        <a href="about.php"><i class="fas fa-info-circle"></i> À-Propos</a>
+        <a href="hebergement.php"><i class="fas fa-bed"></i> Hébergement</a>
+        <a href="restauration.php"><i class="fas fa-utensils"></i> Restauration</a>
+        <a href="transport.php"><i class="fas fa-car"></i> Transport</a>
+        <a href="dashboard/analyse.html"><i class="fas fa-chart-line"></i> Dashboard</a>
 
-<a href="home.php" class="logo">FezCity</a>
-   <nav class="navbar">
-     <a href="home.php">
-     <i class="fas fa-home"></i>
-      Accueil</a>
-     <a href="about.php">
-     <i class="fas fa-info-circle"></i>
-      À-Propos</a>
-     <a href="hebergement.php">
-                <i class="fas fa-bed"></i>
-                Hébergement</a>
-            
-             <a href="restauration.php">
-                <i class="fas fa-utensils"></i>
-                Rèstauration</a>
+        <!-- Bouton de connexion/déconnexion -->
+        <button onclick="window.location.href='<?php echo $button_url; ?>'" class="arrow"><?php echo $button_text; ?></button>
+    </nav>
 
-             <a href="transport.php">
-                <i class="fas fa-car"></i>
-                Transport</a> 
-
-         <a href="dashboard/analyse.html">
-       <i class="fas fa-chart-line"> </i> 
-       Dashbord</a>
-
-       <button onclick="window.location.href='login.php'" class="arrow">Se connecter</button>
-
-
-     <!-- <a href="book.php">Réservation</a> -->
-
-     
-     
-   </nav>
-
-   <div id="menu-btn" class="fas fa-bars"></div>
-
+    <div id="menu-btn" class="fas fa-bars"></div>
 </section>
+
+<?php
+require('./middlewares/db.php'); // Inclure le fichier de connexion à la base de données
+include("./middlewares/db.php"); // Inclure le fichier de vérification de session
+?>
