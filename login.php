@@ -1,57 +1,129 @@
- 
-<div class="container" id="container">
-    <div class="form-container sign-up-container">
-        <form action="./middlewares/inscription.php" method="POST">
-            <h1>Créer un compte</h1>
-        
-            <input type="text" name="nom" placeholder="Nom" required />
-            <input type="email" name="email" placeholder="E-mail" required />
-            <input type="password" name="password" placeholder="Mot de passe" required />
-            <input type="password" name="confirm_password" placeholder="Confirmer le mot de passe" required />
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/connection.css"/>
+</head>
+<body>
+
+<?php
+session_start();
+require('./middlewares/db.php');
+
+// Vérification du login
+if (isset($_POST['email']) && isset($_POST['password'])) {
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+    
+    // Récupérer le mot de passe depuis la base de données
+    $query = "SELECT * FROM `users` WHERE email='$email'";
+    $result = mysqli_query($con, $query) or die(mysqli_error($con));
+    $row = mysqli_fetch_assoc($result);
+    
+    // Vérifier si l'email existe et si le mot de passe correspond
+    if ($row && $password == $row['password']) {
+        $_SESSION['email'] = $email;
+        header("Location: home.php");
+        exit();
+    } else {
+        $login_error = "Incorrect Email/Password.";
+    }
+}
+
+// Processus d'inscription
+if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password'])) {
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $email = mysqli_real_escape_string($con, $_POST['email']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+
+    // Validation de données
+    if (empty($username) || empty($email) || empty($password)) {
+        $signup_error = "All fields are required.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $signup_error = "Invalid email format.";
+    } else {
+        // Vérifier si l'email est déjà utilisé
+        $check_query = "SELECT * FROM `users` WHERE email='$email'";
+        $check_result = mysqli_query($con, $check_query);
+        if (mysqli_num_rows($check_result) > 0) {
+            $signup_error = "Email already exists.";
+        } else {
+            // Insérer les données utilisateur dans la base de données
+            $query = "INSERT INTO `users` (username, email, password, create_datetime) VALUES ('$username', '$email', '$password', NOW())";
+            $result = mysqli_query($con, $query);
+            if ($result) {
+                $_SESSION['email'] = $email;
+                header("Location: home.php");
+                exit();
+            } else {
+                $signup_error = "Registration failed.";
+            }
+        }
+    }
+}
+?>
+
+
+<div class="cont">
+    <div class="form sign-in">
+        <h2>Welcome</h2>
+        <form method="post">
             <label>
-               J'accepte les termes et conditions <input type="checkbox" name="terms" required />
+                <span>Email</span>
+                <input type="email" name="email" />
             </label>
-            <button type="submit">S'inscrire</button>
+            <label>
+                <span>Password</span>
+                <input type="password" name="password" />
+            </label>
+            <?php if (isset($login_error)) { ?>
+            <div class='error'><?php echo $login_error; ?></div>
+            <?php } ?>
+            <p class="forgot-pass">Forgot password?</p>
+            <button type="submit" class="submit">Sign In</button>
         </form>
     </div>
-
-    <div class="form-container sign-in-container">
-        <form action="./middlewares/connexion.php" method="POST">
-            <h1>Connexion</h1>
-
-            <input type="email" name="email" placeholder="E-mail" required />
-            <input type="password" name="password" placeholder="Mot de passe" required />
-            <a href="#">Mot de passe oublié ?</a>
-            <button type="submit">Se connecter</button>
-        </form>
+    <div class="sub-cont">
+        <div class="img">
+            <div class="img__text m--up">
+                <h3>Don't have an account? Please Sign up!</h3>
+            </div>
+            <div class="img__text m--in">
+                <h3>If you already have an account, just sign in.</h3>
+            </div>
+            <div class="img__btn">
+                <span class="m--up">Sign Up</span>
+                <span class="m--in">Sign In</span>
+            </div>
+        </div>
+        <div class="form sign-up">
+            <h2>Create your Account</h2>
+            <form method="post" action="">
+                <label>
+                    <span>Name</span>
+                    <input type="text" name="username" required />
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email" required />
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input type="password" name="password" required />
+                </label>
+                <?php if (isset($signup_error)) { ?>
+                <div class='error'><?php echo $signup_error; ?></div>
+                <?php } ?>
+                <button type="submit" class="submit">Sign Up</button>
+            </form>
+        </div>
     </div>
-	
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>De retour !</h1>
-				<p>Pour rester connecté avec nous, veuillez vous connecter avec vos informations personnelles</p>
-				<button class="ghost" id="signIn">Se connecter</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>Bonjour</h1>
-				<p>Entrez vos coordonnées personnelles et commencez votre voyage avec nous</p>
-				<button class="ghost" id="signUp">S'inscrire</button>
-			</div>
-		</div>
-	</div>
 </div>
-
-<footer>
-	<p>
-		Créé avec <i class="fa fa-heart"></i> par
-		<a target="_blank" href="https://www.facebook.com/people/You-Ssef/pfbid0nG4jTnWSrSPgBi2i7rS9khqHgg17taEoAtdHz3rBPHj8hrZpYPsnuFqDf9CEhfa6l/?mibextid=2JQ9oc">Youssef_MoMo</a>
-		| Tous droits réservés !
-		<a target="_blank" href="https://www.facebook.com/people/You-Ssef/pfbid0nG4jTnWSrSPgBi2i7rS9khqHgg17taEoAtdHz3rBPHj8hrZpYPsnuFqDf9CEhfa6l/?mibextid=2JQ9oc">ici</a>.
-	</p>
-</footer>
-
-<link rel="stylesheet" href="css/login.css">
-<script src="js/login.js"></script>
-
-
+<script>
+    document.querySelector('.img__btn').addEventListener('click', function() {
+        document.querySelector('.cont').classList.toggle('s--signup');
+    });
+</script>
+</body>
+</html>

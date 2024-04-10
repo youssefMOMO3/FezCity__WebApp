@@ -13,22 +13,29 @@
    <!-- Lien du fichier CSS personnalisé -->
    <link rel="stylesheet" href="./css/style.css">
    <style>
+
+
 button.arrow {
-    border: 0px;
-    padding: 4px 8px;
-    border-radius: 5px;
-    margin: 0px 10px;
-    color: #8e44ad;
-    background: white;
-    transition-duration: 1s;
-    text-decoration: none;
-    border-color: #8e44ad;
+   border: 0px;
+   padding: 4px;
+   border-radius: 5px;
+   margin: 0px 10px;
+   color: white;
+   background: #8e44ad;
+   transition-duration: 1s;
+   text-decoration: none;
+   border-color: #8e44ad;
+   text-align: center;
+   font-size: 12px;
+   font-weight: 700;
+   letter-spacing: .02em;
+   
 }
 
 button.arrow:hover {
-    color: white;
-    background: #8e44ad;
-    margin-right: 20px;
+   color: white;
+   background:rgb(67, 67, 67);;
+   margin-right: 20px;
 }
 </style>
 
@@ -62,6 +69,10 @@ button.arrow:hover {
          <a href="dashboard/analyse.html">
        <i class="fas fa-chart-line"> </i> 
        Dashbord</a>
+
+       <button onclick="window.location.href='login.php'" class="arrow">Se connecter</button>
+
+
      <!-- <a href="book.php">Réservation</a> -->
 
      

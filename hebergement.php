@@ -16,7 +16,10 @@
    <link rel="stylesheet" href="css/style.css">
 
 </head>
-
+<?php
+require('./middlewares/db.php'); // Inclure le fichier de connexion à la base de données
+include("./middlewares/db.php"); // Inclure le fichier de vérification de session
+?>
 
 <body>
 
