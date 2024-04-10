@@ -86,6 +86,10 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
     }
 }
 ?>
+<br>
+<br>
+<br>
+
 
 <div class="cont">
     <div class="form sign-in">

@@ -66,7 +66,7 @@ if (isset($_SESSION['email'])) {
         <a href="hebergement.php"><i class="fas fa-bed"></i> Hébergement</a>
         <a href="restauration.php"><i class="fas fa-utensils"></i> Restauration</a>
         <a href="transport.php"><i class="fas fa-car"></i> Transport</a>
-        <a href="dashboard/analyse.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+        <a href="dashboard/analyse.html"><i class="fas fa-chart-line"></i> Portail Tourisme</a>
 
         <!-- Bouton de connexion/déconnexion -->
         <button onclick="window.location.href='<?php echo $button_url; ?>'" class="arrow"><?php echo $button_text; ?></button>
