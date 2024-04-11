@@ -14,6 +14,9 @@
 
    <!-- custom css file link  -->
    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/table.css">
+
+   
 
 </head>
 
@@ -67,181 +70,434 @@ include("./middlewares/db.php"); // Inclure le fichier de vérification de sessi
       z-index: 1; /* assurez-vous que le texte est au-dessus de la vidéo */
    }
 
-   body {
-  background: #fafafa url(https://jackrugile.com/images/misc/noise-diagonal.png);
-  color: #444;
-  font: 100%/30px 'Helvetica Neue', helvetica, arial, sans-serif;
-  text-shadow: 0 1px 0 #fff;
-}
-
-strong {
-  font-weight: bold; 
-}
-
-em {
-  font-style: italic; 
-}
-
-table {
-  background: #f5f5f5;
-  border-collapse: separate;
-  box-shadow: inset 0 1px 0 #fff;
-  font-size: 12px;
-  line-height: 24px;
-  margin: 30px auto;
-  text-align: left;
-  width: 800px;
-} 
-
-th {
-  background: url(https://jackrugile.com/images/misc/noise-diagonal.png), linear-gradient(#777, #444);
-  border-left: 1px solid #555;
-  border-right: 1px solid #777;
-  border-top: 1px solid #555;
-  border-bottom: 1px solid #333;
-  box-shadow: inset 0 1px 0 #999;
-  color: #fff;
-  font-weight: bold;
-  padding: 10px 15px;
-  position: relative;
-  text-shadow: 0 1px 0 #000;  
-}
-
-th:after {
-  background: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.08));
-  content: '';
-  display: block;
-  height: 25%;
-  left: 0;
-  margin: 1px 0 0 0;
-  position: absolute;
-  top: 25%;
-  width: 100%;
-}
-
-th:first-child {
-  border-left: 1px solid #777;  
-  box-shadow: inset 1px 1px 0 #999;
-}
-
-th:last-child {
-  box-shadow: inset -1px 1px 0 #999;
-}
-
-td {
-  border-right: 1px solid #fff;
-  border-left: 1px solid #e8e8e8;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #e8e8e8;
-  padding: 10px 15px;
-  position: relative;
-  transition: all 300ms;
-}
-
-td:first-child {
-  box-shadow: inset 1px 0 0 #fff;
-} 
-
-td:last-child {
-  border-right: 1px solid #e8e8e8;
-  box-shadow: inset -1px 0 0 #fff;
-} 
-
-tr {
-  background: url(https://jackrugile.com/images/misc/noise-diagonal.png); 
-}
-
-tr:nth-child(odd) td {
-  background: #f1f1f1 url(https://jackrugile.com/images/misc/noise-diagonal.png); 
-}
-
-tr:last-of-type td {
-  box-shadow: inset 0 -1px 0 #fff; 
-}
-
-tr:last-of-type td:first-child {
-  box-shadow: inset 1px -1px 0 #fff;
-} 
-
-tr:last-of-type td:last-child {
-  box-shadow: inset -1px -1px 0 #fff;
-} 
-
-tbody:hover td {
-  color: transparent;
-  text-shadow: 0 0 3px #aaa;
-}
-
-tbody:hover tr:hover td {
-  color: #444;
-  text-shadow: 0 1px 0 #fff;
-}
+   
 </style>
  
 </video>
   
 </div>
 
+<br>
+<br>
+<br>
+
+
+
+
+
+<section class="packages">
+
+   <h1 class="heading-title">Transport à Fès</h1>
+<br>
+
+   <div class="box-container">
+
+      <div class="box">
+         <div class="image">
+            <img src="img/gare.jpg" alt="">
+         </div>
+         <div class="content">
+            <h3>Gare Ferroviaire (ONCF)</h3>
+            <p>
+            Avenue des Amohades 30 000, Fès<br>
+    Tel : <a href="tel:+2120890203040">+212 (0) 8 90 20 30 40</a><br>
+    Fax : <a href="tel:+212537770002">+212 5 37 77 00 02</a> / <a href="tel:+212537777857">+212 5 37 77 78 57</a><br>
+    
+</p>
+
+            <a href="https://www.oncf.org.ma" class="btn">Plus</a>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="img/aeroport.jpg" alt="">
+         </div>
+         <div class="content">
+            <h3>Aéroport de Fès-Saïss</h3>
+            <p>
+    Km 15, Route d’Imouzzer, B.P 11 A<br>
+    Tel : <a href="tel:+212535652161">+212 5 35 65 21 61</a><br>
+    Fax : <a href="tel:+212535652664">+212 5 35 65 26 64</a><br>
+  </p>
+            <a href="https://www.onda.ma" class="btn">Plus</a>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="img/ctm.jpg" alt="">
+         </div>
+         <div class="content">
+            <h3>Gare routière CTM</h3>
+            <p>
+    Quartier Atlas,<br>
+    En face du tribunal 1ère instance,<br>
+    30 000, Fès<br>
+    Tel : <a href="tel:+2120800090030">+212 (0) 800 0900 30</a><br>
+     </p>
+
+            <a href="https://www.ctm.ma" class="btn">Plus</a>
+         </div>
+      </div>
+
+     
+      <div class="box">
+         <div class="image">
+            <img src="img/bus.jpg" alt="">
+         </div>
+         <div class="content">
+            <h3> Fes City Bus</h3>
+            <p>
+
+    Adresse: Route de Meknès, Km 3.5, BP 302, Fès, Maroc<br>
+    Fax: +212 5 35 62 44 55<br>
+</p>
+
+            <a href="https://www.worldtravelguide.net/guides/africa/morocco/fes/gettingaround/" class="btn">Plus</a>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="img/ptaxi.jpg" alt="">
+         </div>
+         <div class="content">
+            <h3> Petit Taxi  </h3>
+<p>Siège social : Route de Meknès, Km 3.5, BP 302, Fès, Maroc</p>
+<p>Gare routière centrale : Avenue Hassan II, Fès, Maroc
+   <br>
+   Tel Station de taxis de la gare de Fès: <a href="tel:+2120800090030">+212 5 35 62 44 44</a><br>
+   Tel Station de taxis de Bab Bou Jeloud: <a href="tel:+2120800090030">+212 5 35 62 44 55</a><br>
+</p>
+            <a href="" class="btn">Plus</a>
+         </div>
+      </div>
+
+      <div class="box">
+         <div class="image">
+            <img src="img/Gtaxi.webp" alt="">
+         </div>
+         <div class="content">
+    <h3> Grands Taxis </h3>
+    <p>Siège social : Route de Meknès, Km 3.5, BP 302, Fès, Maroc</p>
+    <p>Gare routière centrale : Avenue Hassan II, Fès, Maroc
+       <br>
+       Tel Station de taxis de la gare de Fès: <a href="tel:+212535624444">+212 5 35 62 44 44</a><br>
+       Tel Station de taxis de Bab Bou Jeloud: <a href="tel:+212535624455">+212 5 35 62 44 55</a><br>
+    </p>
+    <a href="" class="btn">Plus</a>
+</div>
+
+         </div>
+      </div>
+
+      </section>      
+
+
+<br>
+<br>
+<br>
+<h1 class="heading-title">Transport <br><br> touristique</h1>
+<br>
+<br>
 
 <table>
   <thead>
     <tr>
-      <th>Option</th>
-      <th>Default</th>
-      <th>Description</th>
+      <th>Nom de l'entreprise</th>
+      <th>Adresse</th>
+      <th>Téléphone</th>
+      <th>Portable</th>
+      <th>Email</th>
+      <th>Site Web</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>showSpeed</strong></td>
-      <td>15</td>
-      <td>The speed of the show/reveal</td>
+      <td>Ste AS TRAVEL (SARL)</td>
+      <td>LOT HABIB N" 21 ZOUAGHA BAS FES</td>
+      <td>00212667393575</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>www.astravelclick.com</td>
     </tr>
     <tr>
-      <td><strong>showEasing</strong></td>
-      <td>'linear'</td>
-      <td>The easing of the show/reveal</td>
+      <td>Ste ATLAS AMAZIGH TOUR</td>
+      <td>47 rue 4 Q 3 al hadika route de meknes fès.</td>
+      <td>N/A</td>
+      <td>00212661216584</td>
+      <td>N/A</td>
+      <td>www.atlasamazightour.com</td>
     </tr>
     <tr>
-      <td><strong>hideSpeed</strong></td>
-      <td>50</td>
-      <td>The speed of the hide/conceal</td>
+      <td>Ste Al Adarissa TOURS</td>
+      <td>N/A</td>
+      <td>00212535653486</td>
+      <td>00212661206364</td>
+      <td>AdarissaTOURS@gmail.com</td>
+      <td>N/A</td>
     </tr>
     <tr>
-      <td><strong>hideEasing</strong></td>
-      <td>'linear'</td>
-      <td>The easing of the hide/conceal</td>
-    </tr>         
-    <tr>
-      <td><strong>width</strong></td>
-      <td>'auto'</td>
-      <td>The width that the data will be truncated to - <em>('auto' or px amount)</em></td>
+      <td>Ste BACHIR ET FRERES TOURS</td>
+      <td>DOUAR OLD KHLIFA AIN CHKEF FES</td>
+      <td>00212661257900</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>www.bachirTOURS.com</td>
     </tr>
     <tr>
-      <td><strong>ellipsis</strong></td>
-      <td>true</td>
-      <td>Set to true to enable the ellipsis</td>
+      <td>Ste Classic Lines</td>
+      <td>N° 55, Rue Ibn Maja, avenue des Al Mouahidine, VN Fès,</td>
+      <td>+212 661.25.22.70 / +212 653.40.99.16</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>www.classiclinesfes.com</td>
     </tr>
     <tr>
-      <td><strong>title</strong></td>
-      <td>false</td>
-      <td>Set to true to show the full data on hover</td>
+      <td>Ste eko TOURS</td>
+      <td>107 hay Salam RTE bourkaiz fes.</td>
+      <td>00212661562963</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>www.ekoTOURS.net</td>
     </tr>
     <tr>
-      <td><strong>afterShow</strong></td>
-      <td> $.noop</td>
-      <td>The callback fired after the show/reveal</td>
+      <td>Ste Enjoy TOURS</td>
+      <td>32 Rue tantane avenue wafae route de Sefrou. Fes</td>
+      <td>00212535616446</td>
+      <td>00212618593001</td>
+      <td>Med.nouichi@hotmail.fr</td>
+      <td>N/A</td>
     </tr>
     <tr>
-      <td><strong>afterHide</strong></td>
-      <td>$.noop</td>
-      <td>The callback fired after the hide/conceal</td>
+      <td>Ste Fes Excursion</td>
+      <td>3 ,Rca Qods route immouzer ,Appt 1 imm 3 etage 1 .Fes</td>
+      <td>+212676605038</td>
+      <td>N/A</td>
+      <td>Transporttihami@gmail.com</td>
+      <td>N/A</td>
     </tr>
+    <tr>
+      <td>Ste Fès TOURS</td>
+      <td>Mont fleuri 2 lottissement benis tel 00212535625251 fax 00212535940277</td>
+      <td>N/A</td>
+      <td>00212661660123</td>
+      <td>fesTOURS@menara.ma</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Ste Four Season TOURS</td>
+      <td>Rue tanger N 5 Imm .Ajiad 1er Etag N 3 - atlas -Fes</td>
+      <td>N/A</td>
+      <td>00212661483062</td>
+      <td>tourisme.4saisons@gmail.com</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Ste Fuma TOURS</td>
+      <td>hay sidi el hadi rue 3 n 13 zougha fes.</td>
+      <td>N/A</td>
+      <td>00212664257479</td>
+      <td>aziz.sahari@hotmail.fr</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Ste GM2 TOURS</td>
+      <td>Adresse : av. des Far , imm. Fès Carrefour 2°ét. bur n° 7 30000 Fès Maroc.</td>
+      <td> (+212) 0535 65 84 46</td>
+      <td>00212661178991</td>
+      <td>N/A</td>
+      <td>www.gm2TOURS.ma</td>
+    </tr>
+    <tr>
+      <td>good travels</td>
+      <td>adresse: 44 espace fès rus brahim roudani bvd med v fes</td>
+      <td>N/A</td>
+      <td>00212661623201</td>
+      <td>N/A</td>
+      <td>www.morocco-goodtravels.com</td>
+    </tr>
+    <tr>
+      <td>Ste GROWN TOURS</td>
+      <td>15 Rue Hounaine Avenue Joulane Lido Fès Maroc.</td>
+      <td>00212535731458</td>
+      <td>00212661159045</td>
+      <td>N/A</td>
+      <td>www.grownTOURS.com</td>
+    </tr>
+    <tr>
+      <td>Sté Jade TOURS sarl</td>
+      <td>Adresse: n21 magasin 7 rue lakhdar ghilane VN Fes.</td>
+      <td>N/A</td>
+      <td>00212660548971 / 00212662158817</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Ste KENZA TOURS</td>
+      <td>78 Dalila 2 Zougha Fès.</td>
+      <td>N/A</td>
+      <td>+ 212 6 13 54 12 41</td>
+      <td>N/A</td>
+      <td>www.kenzaTOURS.com</td>
+    </tr>
+    <tr>
+      <td>Ste Ktami Transport</td>
+      <td>18 Rue jabel Aouam hay narjiss Fès 30000 Maroc.</td>
+      <td>N/A</td>
+      <td>00212661351176</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Ste Laoudyi transport</td>
+      <td>Rue laayoune appt 3 résidence Abdellaoui sidi brahim Fès.</td>
+      <td>N/A</td>
+      <td>00212661665662</td>
+      <td>laoudyitransport@gmail.com</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Lixsous TOURS</td>
+      <td>N 232 bloc A Hay El Wifak Zouagha fes</td>
+      <td>002126 61 60 25 52</td>
+      <td>N/A</td>
+      <td>lixsousTOURS@hotmail.fr</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Ste Medina TOURS SARL</td>
+      <td>Adress : Hay Hassani Bloc E 3 N 8 Erac Sidi Brahim Fes .</td>
+      <td>N/A</td>
+      <td>00212673662067</td>
+      <td>N/A</td>
+      <td>www.medinaTOURS.net</td>
+    </tr>
+
   </tbody>
 </table>
 
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<h1 class="heading-title">Agence de <br> <br> location</h1>
+<br>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>Agence</th>
+      <th>Adresse</th>
+      <th>Site Web</th>
+      <th>E-mail</th>
+      <th>Tel</th>
+      <th>Fax</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Avis SCAL</td>
+      <td>50, Bd Chefchaouni Aéroport, Fès Saïss</td>
+      <td><a href="https://www.avis.ma">www.avis.ma</a></td>
+      <td>fes@avis.ma</td>
+      <td>+212 5 35 62 69 69</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Borjm an Car</td>
+      <td>33, Rue Palestine, Rés. Al Houria</td>
+      <td><a href="https://www.borjmancar.com">www.borjmancar.com</a></td>
+      <td>info@borjmancar.com</td>
+      <td>+212 5 35 65 34 35</td>
+      <td>+212 5 35 65 43 03</td>
+    </tr>
+    <tr>
+      <td>Classic Car SARL</td>
+      <td>31, Rue Abdelkrim Khattabi, Imm. Ben Moussa</td>
+      <td>N/A</td>
+      <td>classiccar@gmail.com</td>
+      <td>+ 212 5 35 94 05 53</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Dijoui Car</td>
+      <td>39, Rue du 16 Novembre, Bd. Chefchaouni</td>
+      <td><a href="https://www.dijouicar.com">www.dijouicar.com</a></td>
+      <td>N/A</td>
+      <td>+212 5 35 94 00 44</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Europcar</td>
+      <td>45, Av. Hassan II</td>
+      <td><a href="https://www.europcar.com">www.europcar.com</a></td>
+      <td>fes@europcar.ma</td>
+      <td>+212 5 35 62 65 45</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Flying Fès Car</td>
+      <td>N/A</td>
+      <td><a href="https://www.flyingfescar.com">www.flyingfescar.com</a></td>
+      <td>contact@flyingfescar.com</td>
+      <td>+ 212 5 35 62 67 85</td>
+      <td>+ 212 5 35 62 67 85</td>
+    </tr>
+    <tr>
+      <td>GM2 Car</td>
+      <td>N/A</td>
+      <td><a href="https://www.gm2car.com">www.gm2car.com</a></td>
+      <td>contact@gm2car.com</td>
+      <td>+212 5 35 73 29 07</td>
+      <td>+212 5 35 64 41 50</td>
+    </tr>
+    <tr>
+      <td>Hertz</td>
+      <td>Bd. Lalla Meryem, Kiss. De la foire Aéroport Fès Saïss</td>
+      <td><a href="https://www.hertz.ma">www.hertz.ma</a></td>
+      <td>agence.fes@hertz.ma</td>
+      <td>+212 5 35 62 28 12</td>
+      <td>+212 5 35 62 28 12</td>
+    </tr>
+    <tr>
+      <td>Perfect Car</td>
+      <td>62, Bd Med V, Rés. Badr</td>
+      <td><a href="https://www.perfectcarfes.com">www.perfectcarfes.com</a></td>
+      <td>contact@perfectcarfes.com</td>
+      <td>+212 5 35 65 15 15</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Saïss Car SARL</td>
+      <td>9, Rue Ghassani Kanfani, Rés. Nabila</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>+212 5 35 40 42 73</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Touring Car</td>
+      <td>36, Bd Mohammed V</td>
+      <td>N/A</td>
+      <td>touringcar5@hotmail.com</td>
+      <td>+212 5 35 94 26 74</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td>Tourvilles</td>
+      <td>13, Rue Mokhtar Soussi</td>
+      <td><a href="https://www.tourvilles.net">www.tourvilles.net</a></td>
+      <td>contact@tourvilles.net</td>
+      <td>+212 5 35 62 66 35</td>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>
 
 
 
