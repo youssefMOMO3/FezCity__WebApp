@@ -21,7 +21,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             $_SESSION['isAdmin'] = true;
         }
 
-        header("Location: home.php");
+        header("Location: ./middlewares/confirmationLog.php");
         exit();
     } else {
         $login_error = "Incorrect Email/Password.";
@@ -99,6 +99,10 @@ function isAdmin($email) {
 </head>
 <body>
 
+<?php
+   include('includes/navbar2.php');
+
+?> 
 <br>
 <br>
 <br>

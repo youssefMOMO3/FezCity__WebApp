@@ -47,9 +47,9 @@
     </body>
     
 <script>
-   // Rediriger vers la liste de réservation après 2 secondes
+   
    setTimeout(function() {
-      window.location.href = "../book.php";
+      window.location.href = "../home.php";
    }, 2000); // 2000 millisecondes = 2 secondes
 </script>
 </html>

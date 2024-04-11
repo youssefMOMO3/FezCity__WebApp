@@ -85,20 +85,8 @@ button.arrow:hover {
 </head>
 <body>
 
-<?php
-session_start();
-require('./middlewares/db.php'); // Inclure le fichier de connexion à la base de données
+<!-- HTML code continues below -->
 
-// Vérifier si l'utilisateur est connecté
-if (isset($_SESSION['email'])) {
-    $button_text = "Déconnexion";
-    $button_url = "./middlewares/logout.php"; // Lien vers le script de déconnexion
-} else {
-    $button_text = "Connexion";
-    $button_url = "./login.php"; // Lien vers la page de connexion
-}
-?>
-   
 <!-- Section en-tête commence ici -->
 <section class="header">
     <a href="home.php" class="logo">FezCity</a>
@@ -112,14 +100,13 @@ if (isset($_SESSION['email'])) {
         <a href="dashboard/analyse.html"><i class="fas fa-chart-line"></i> Portail-Tourisme</a>
 
         <!-- Bouton de connexion/déconnexion -->
-        <button onclick="window.location.href='<?php echo $button_url; ?>'" class="arrow"><?php echo $button_text; ?></button>
     </nav>
 
     <div id="menu-btn" class="fas fa-bars"></div>
 </section>
+<br>
 
 
-<?php
-require('./middlewares/db.php'); // Inclure le fichier de connexion à la base de données
-include("./middlewares/db.php"); // Inclure le fichier de vérification de session
-?>
+
+
+
