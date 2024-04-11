@@ -1,35 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <title>Login</title>
-    <link rel="stylesheet" href="css/connection.css"/>
-    <style>
-      
-      .error {
-    color: red;
-    font-size: 14px;
-    margin-top: 5px;
-    text-align: center; /* Pour centrer le texte horizontalement */
-    display: block; /* Pour que le message soit affiché comme un bloc */
-    margin: 0 auto; /* Pour centrer le bloc dans son conteneur parent */
-        }
-        /* Animation de vibration pour les champs de formulaire invalides */
-        input:invalid {
-            animation: shake 0.5s;
-        }
-
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            50% { transform: translateX(5px); }
-            75% { transform: translateX(-5px); }
-            100% { transform: translateX(0); }
-        }
-    </style>
-</head>
-<body>
-
 <?php
 session_start();
 require('./middlewares/db.php');
@@ -47,6 +15,12 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
     // Vérifier si l'email existe et si le mot de passe correspond
     if ($row && $password == $row['password']) {
         $_SESSION['email'] = $email;
+
+        // Vérifier si l'utilisateur est un administrateur
+        if (isAdmin($email)) {
+            $_SESSION['isAdmin'] = true;
+        }
+
         header("Location: home.php");
         exit();
     } else {
@@ -85,7 +59,46 @@ if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['passwor
         }
     }
 }
+
+// Fonction pour vérifier si l'utilisateur est un administrateur
+function isAdmin($email) {
+    $adminEmails = array("admin1@gmail.com", "admin2@gmail.com", "admin3@gmail.com", "admin4@gmail.com", "admin5@gmail.com", "admin6@gmail.com", "admin7@gmail.com", "admin8@gmail.com", "admin9@gmail.com", "youssef.berrissoul@usmba.ac.ma");
+
+    return in_array($email, $adminEmails);
+}
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/connection.css"/>
+    <style>
+      
+      .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: center; /* Pour centrer le texte horizontalement */
+    display: block; /* Pour que le message soit affiché comme un bloc */
+    margin: 0 auto; /* Pour centrer le bloc dans son conteneur parent */
+        }
+        /* Animation de vibration pour les champs de formulaire invalides */
+        input:invalid {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+
 <br>
 <br>
 <br>

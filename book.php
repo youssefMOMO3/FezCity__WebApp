@@ -1,4 +1,12 @@
 <?php
+// Vérifier si une session est active avant de démarrer une nouvelle session
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Inclusion du fichier de connexion à la base de données
+require('./middlewares/db.php');
+
 // Vérification du formulaire lors de la soumission
 if(isset($_POST['send'])) {
     // Vérification des champs requis
@@ -23,15 +31,75 @@ if(isset($_POST['send'])) {
     
     // Si aucune erreur, traiter les données
     if(empty($errors)) {
-        // Traitement des données (insérer dans la base de données, envoyer un email, etc.)
-        // Insérer le code pour traiter les données ici
-        
-        // Redirection après soumission réussie
-        header("Location: ./middlewares/confirmation.php");
-        exit();
+        // Récupérer les valeurs des champs du formulaire
+        $name = mysqli_real_escape_string($con, $_POST['name']);
+        $email = mysqli_real_escape_string($con, $_POST['email']);
+        $phone = mysqli_real_escape_string($con, $_POST['phone']);
+        $address = mysqli_real_escape_string($con, $_POST['address']);
+        $location = mysqli_real_escape_string($con, $_POST['location']);
+        $guests = mysqli_real_escape_string($con, $_POST['guests']);
+        $arrivals = mysqli_real_escape_string($con, $_POST['arrivals']);
+        $leaving = mysqli_real_escape_string($con, $_POST['leaving']);
+
+        // Créer la requête d'insertion
+        $query = "INSERT INTO reservations (name, email, phone, address, location, guests, arrivals, leaving) VALUES ('$name', '$email', '$phone', '$address', '$location', '$guests', '$arrivals', '$leaving')";
+       
+        // Exécuter la requête d'insertion
+        if(mysqli_query($con, $query)) {
+            header("Location: ./middlewares/confirmation.php");
+            exit();
+        } else {
+            echo "Erreur lors de l'insertion des données dans la base de données: " . mysqli_error($con);
+        }
     }
 }
+   
+// Vérification du rôle de l'utilisateur et affichage des réservations
+if(isset($_SESSION['role'])) {
+    $role = $_SESSION['role'];
+
+    // Exécuter la requête SQL appropriée en fonction du rôle de l'utilisateur
+    if($role == 'admin') {
+        // Pour l'administrateur : récupérer toutes les réservations
+        $query = "SELECT * FROM reservations";
+    } else {
+        // Pour l'utilisateur normal : récupérer les réservations de l'utilisateur connecté
+        $userId = $_SESSION['user_id'];
+        $query = "SELECT * FROM reservations WHERE user_id = $userId";
+    }
+
+    $result = mysqli_query($con, $query);
+
+    // Vérifier s'il y a des réservations
+    if(mysqli_num_rows($result) > 0) {
+        // Afficher les réservations
+        echo "<h1>Liste des réservations</h1>";
+        echo "<table>";
+        echo "<tr><th>ID</th><th>Nom</th><th>Email</th><th>Téléphone</th><th>Adresse</th><th>Lieu</th><th>Nombre d'invités</th><th>Arrivée</th><th>Départ</th></tr>";
+        while($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<td>".$row['id']."</td>";
+            echo "<td>".$row['name']."</td>";
+            echo "<td>".$row['email']."</td>";
+            echo "<td>".$row['phone']."</td>";
+            echo "<td>".$row['address']."</td>";
+            echo "<td>".$row['location']."</td>";
+            echo "<td>".$row['guests']."</td>";
+            echo "<td>".$row['arrivals']."</td>";
+            echo "<td>".$row['leaving']."</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+    } else {
+        echo "Aucune réservation trouvée.";
+    }
+} else {
+    // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+    header("Location: login.php");
+    exit();
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -111,6 +179,28 @@ if(isset($_POST['send'])) {
 .errors li {
     margin-bottom: 5px;
 }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+
 
 </style>
  
@@ -176,15 +266,64 @@ if(isset($_POST['send'])) {
        </div>
    <?php endif; ?>
 
-</section>
+   <?php
+// Vérifier si une session est active avant de démarrer une nouvelle session
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+// Inclusion du fichier de connexion à la base de données
+require('./middlewares/db.php');
 
-<!-- section réservation se termine -->
+// Vérification du rôle de l'utilisateur
+if(isset($_SESSION['role'])) {
+    $role = $_SESSION['role'];
+
+    // Exécuter la requête SQL appropriée en fonction du rôle de l'utilisateur
+    if($role == 'admin') {
+        // Pour l'administrateur : récupérer toutes les réservations
+        $query = "SELECT * FROM reservations";
+    } else {
+        // Pour l'utilisateur normal : récupérer les réservations de l'utilisateur connecté
+        $userId = $_SESSION['user_id'];
+        $query = "SELECT * FROM reservations WHERE user_id = $userId";
+    }
+
+    $result = mysqli_query($con, $query);
+
+    // Vérifier s'il y a des réservations
+    if(mysqli_num_rows($result) > 0) {
+        // Afficher les réservations
+        echo "<h1>Liste des réservations</h1>";
+        echo "<table>";
+        echo "<tr><th>ID</th><th>Nom</th><th>Email</th><th>Téléphone</th><th>Adresse</th><th>Lieu</th><th>Nombre d'invités</th><th>Arrivée</th><th>Départ</th></tr>";
+        while($row = mysqli_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<td>".$row['id']."</td>";
+            echo "<td>".$row['name']."</td>";
+            echo "<td>".$row['email']."</td>";
+            echo "<td>".$row['phone']."</td>";
+            echo "<td>".$row['address']."</td>";
+            echo "<td>".$row['location']."</td>";
+            echo "<td>".$row['guests']."</td>";
+            echo "<td>".$row['arrivals']."</td>";
+            echo "<td>".$row['leaving']."</td>";
+            echo "</tr>";
+        }
+        echo "</table>";
+    } else {
+        echo "Aucune réservation trouvée.";
+    }
+} else {
+   //  // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+   //  header("Location: login.php");
+    exit();
+}
+?>
 
 
 <?php
    include('includes/footer.php');
-
- ?> 
+?> 
 
 <!-- section pied de page se termine -->
 

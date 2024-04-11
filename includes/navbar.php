@@ -26,7 +26,7 @@ button.arrow {
    text-decoration: none;
    border-color: #8e44ad;
    text-align: center;
-   font-size: 12px;
+   font-size: 11px;
    font-weight: 700;
    letter-spacing: .02em;
    
@@ -66,8 +66,8 @@ if (isset($_SESSION['email'])) {
         <a href="hebergement.php"><i class="fas fa-bed"></i> Hébergement</a>
         <a href="restauration.php"><i class="fas fa-utensils"></i> Restauration</a>
         <a href="transport.php"><i class="fas fa-car"></i> Transport</a>
-        <a href="book.php">Réservation</a>
-        <a href="dashboard/analyse.html"><i class="fas fa-chart-line"></i> Portail Tourisme</a>
+        <a href="book.php"><i class="fas fa-globe"></i> Réservation</a>
+        <a href="dashboard/analyse.html"><i class="fas fa-chart-line"></i> Portail-Tourisme</a>
 
         <!-- Bouton de connexion/déconnexion -->
         <button  onclick="window.location.href='<?php echo $button_url; ?>'" class="arrow"><?php echo $button_text; ?></button>
