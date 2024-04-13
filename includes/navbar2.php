@@ -97,7 +97,7 @@ button.arrow:hover {
         <a href="restauration.php"><i class="fas fa-utensils"></i> Restauration</a>
         <a href="transport.php"><i class="fas fa-car"></i> Transport</a>
         <a href="book.php"><i class="fas fa-globe"></i> Réservation</a>
-        <a href="dashboard/analyse.html"><i class="fas fa-chart-line"></i> Portail-Tourisme</a>
+        <a href="dashboard/analyse.html"><i class="fas fa-chart-line"></i> Dashboard</a>
 
         <!-- Bouton de connexion/déconnexion -->
     </nav>

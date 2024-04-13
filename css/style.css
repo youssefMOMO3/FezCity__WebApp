@@ -129,13 +129,13 @@ section{
    z-index: 1000;
    
 }
+
  
-
-
 /* Style les liens de l'en-tête */
 .header a {
    text-align: center;
-   padding: 12px;
+   padding-left: 12px;
+   padding-right: 12px  ;
    text-decoration: none;
    font-size: 14px;
    font-weight: 700;

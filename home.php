@@ -227,5 +227,6 @@ include("./middlewares/db.php"); // Inclure le fichier de vérification de sessi
 <!-- Lien du fichier JS personnalisé -->
 <script src="js/script.js"></script>
 
+
 </body>
 </html>

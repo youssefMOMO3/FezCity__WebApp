@@ -199,9 +199,6 @@ include("./middlewares/db.php"); // Inclure le fichier de vérification de sessi
 <br>
 <br>
 <h1 class="heading-title">Transport <br><br> touristique</h1>
-<br>
-<br>
-
 <table>
   <thead>
     <tr>
