@@ -498,7 +498,13 @@ include("./middlewares/db.php"); // Inclure le fichier de vérification de sessi
 
 
 
-
+<br>
+<br>
+<?php
+   include('includes/reviews.php');
+?> 
+<br>
+<br>
 
 
 

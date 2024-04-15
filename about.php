@@ -271,151 +271,13 @@ include("./middlewares/db.php"); // Inclure le fichier de vérification de sessi
 
 
 
-
-<!-- reviews section starts  -->
-
-<section class="reviews">
-
-   <h1 class="heading-title"> Avis des clients </h1>
-
-   <div class="swiper reviews-slider">
-
-      <div class="swiper-wrapper">
-
-         <div class="swiper-slide slide">
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-            </div>
-            <p>Fès est un labyrinthe vivant, plein de charme. Les tanneries sont inoubliables !</p>
-            <h3>john deo</h3>
-            <span>Visiteur</span>
-            <!-- <img src="images/pic-1.png" alt=""> -->
-         </div>
-
-         <div class="swiper-slide slide">
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-            </div>
-            <p>Charmée par Fès, ses cours de cuisine et sa musique andalouse. Une ville qui éveille les sens.</p>
-            <h3>john deo</h3>
-            <span>Visiteur</span>
-            <img src="images/pic-2.png" alt="">
-         </div>
-
-         <div class="swiper-slide slide">
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-            </div>
-            <p>Fès authentique, mais un guide est essentiel pour naviguer la médina.</p>
-            <h3>john deo</h3>
-            <span>traveler</span>
-            <img src="images/pic-3.png" alt="">
-         </div>
-
-         <div class="swiper-slide slide">
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-            </div>
-            <p>La spiritualité et l'accueil à Fès m'ont touchée. La cuisine est un voyage en soi.</p>
-            <h3>john deo</h3>
-            <span>traveler</span>
-            <img src="images/pic-4.png" alt="">
-         </div>
-
-         <div class="swiper-slide slide">
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-            </div>
-            <p>Passionné d'histoire, j'ai été comblé par Fès. Préparez-vous à beaucoup marcher.</p>
-            <h3>john deo</h3>
-            <span>traveler</span>
-            <img src="images/pic-5.png" alt="">
-         </div>
-
-         <div class="swiper-slide slide">
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-            </div>
-            <p>Fès, un mélange de tradition et modernité. Ne ratez pas le hammam traditionnel !</p>
-            <h3>Max</h3>
-            <span>Visiteur</span>
-            <img src="images/pic-6.png" alt="">
-         </div>
-         <!-- <div class="swiper-slide slide">
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus facilis laudantium magnam saepe magni ullam possimus laborum voluptas, veniam ipsum officiis quae doloribus minima ut quis. Molestiae qui distinctio possimus?</p>
-            <h3>john deo</h3>
-            <span>Visiteur</span>
-            <img src="images/pic-5.png" alt="">
-         </div> -->
-
-         <!-- <div class="swiper-slide slide">
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus facilis laudantium magnam saepe magni ullam possimus laborum voluptas, veniam ipsum officiis quae doloribus minima ut quis. Molestiae qui distinctio possimus?</p>
-            <h3>john deo</h3>
-            <span>Visiteur</span>
-            <img src="images/pic-6.png" alt="">
-         </div>
-         <div class="swiper-slide slide">
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus facilis laudantium magnam saepe magni ullam possimus laborum voluptas, veniam ipsum officiis quae doloribus minima ut quis. Molestiae qui distinctio possimus?</p>
-            <h3>john deo</h3>
-            <span>Visiteur</span>
-            <img src="images/pic-5.png" alt="">
-         </div>
-
-         <div class="swiper-slide slide">
-            <div class="stars">
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-               <i class="fas fa-star"></i>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus facilis laudantium magnam saepe magni ullam possimus laborum voluptas, veniam ipsum officiis quae doloribus minima ut quis. Molestiae qui distinctio possimus?</p>
-            <h3>john deo</h3>
-            <span>Visiteur</span>
-            <img src="images/pic-6.png" alt="">
-         </div> -->
-
-
-      </div>
-
-   </div>
-
-</section>
-
-<!-- reviews section ends -->
+<br>
+<br>
+<?php
+   include('includes/reviews.php');
+?> 
+<br>
+<br>
 
 
 
@@ -442,3 +304,7 @@ include("./middlewares/db.php"); // Inclure le fichier de vérification de sessi
 
 </body>
 </html>
+
+
+
+

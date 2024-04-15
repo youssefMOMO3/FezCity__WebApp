@@ -211,10 +211,18 @@ include("./middlewares/db.php"); // Inclure le fichier de vérification de sessi
 
 
 <?php
-   // include('includes/contact.php');
+   include('includes/contact.php');
 ?> 
 <!-- Inclusion de la section contact -->
 
+
+<br>
+<br>
+<?php
+   include('includes/reviews.php');
+?> 
+<br>
+<br>
 
 <?php
    include('includes/footer.php');
